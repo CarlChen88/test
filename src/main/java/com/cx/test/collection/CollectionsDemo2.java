@@ -1,4 +1,4 @@
-package com.cx.test;
+package com.cx.test.collection;
 
 import com.cx.test.common.Student;
 import com.google.common.collect.Lists;
