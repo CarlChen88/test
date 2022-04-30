@@ -1,5 +1,7 @@
 package com.cx.test.enums;
 
+import java.util.Objects;
+
 /**
  * @author chenxiang
  * @vesion 1.0
@@ -40,7 +42,7 @@ public enum ProfitItemType {
         this.profitItemTypeTwo = profitItemTypeTwo;
     }
 
-    public static ProfitItemType getProfitItemType(ProfitItemType one,ProfitItemType two){
+    public static ProfitItemType getProfitItemTypeByTwo(ProfitItemType one,ProfitItemType two){
         for (ProfitItemType profitItemType: ProfitItemType.values()) {
             if(one !=null && two !=null
                     &&((profitItemType.profitItemTypeTwo ==one && profitItemType.profitItemTypeOne ==two) || (profitItemType.profitItemTypeTwo ==two && profitItemType.profitItemTypeOne ==one))){
@@ -50,4 +52,15 @@ public enum ProfitItemType {
         return null;
     }
 
+    public static ProfitItemType getProfitItemTypeByItemType(String itemType){
+        if(Objects.isNull(itemType)) {
+            return null;
+        }
+        for (ProfitItemType profitItemType: ProfitItemType.values()) {
+            if(profitItemType.getItemType().equals(itemType)){
+                return profitItemType;
+            }
+        }
+        return null;
+    }
 }

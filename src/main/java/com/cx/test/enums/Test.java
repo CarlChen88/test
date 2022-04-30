@@ -11,7 +11,7 @@ public class Test {
         String getsss = ProcessEnum.INSTANCE.getsss("11");
         System.out.println(getsss);
         System.out.println(WeekDayEnum.getWeekDayEnum(1).name());
-        ProfitItemType profitItemType = ProfitItemType.getProfitItemType(ProfitItemType.CASH, ProfitItemType.COUPON);
+        ProfitItemType profitItemType = ProfitItemType.getProfitItemTypeByTwo(ProfitItemType.CASH, ProfitItemType.COUPON);
         System.out.println(profitItemType.getItemType());
     }
 }
