@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.*;
 public class CollectionsDemo2 {
     public static void main(String[] args) {
         List<Student> studentList = Lists.newArrayList(
-                Student.builder().code("432").name("王五").sex("male").grade(98).build(),
+                Student.builder().code("4322").name("王五").sex("male").grade(98).build(),
                 Student.builder().code("123").name("张三").sex("female").grade(34).build(),
                 Student.builder().code("456").name("李四").sex("male").grade(32).build());
         //分组
