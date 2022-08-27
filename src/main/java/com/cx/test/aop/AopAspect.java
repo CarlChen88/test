@@ -44,6 +44,11 @@ public class AopAspect {
         System.out.println("3:AfterReturning=========================");
     }
 
+    @After("showLog()")
+    public void After(){
+        System.out.println("3:After=========================");
+    }
+
 
 
 
