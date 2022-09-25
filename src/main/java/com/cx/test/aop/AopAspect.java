@@ -25,7 +25,6 @@ public class AopAspect {
     public Object dealLog(ProceedingJoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature)joinPoint.getSignature();
         Method method = signature.getMethod();
-        System.out.println("2:around=========================");
         return joinPoint.proceed();
     }
 
@@ -36,7 +35,7 @@ public class AopAspect {
 
     @AfterThrowing("showLog()")
     public void AfterThrowing(){
-        System.out.println("4:AfterThrowing=========================");
+        System.out.println("AfterThrowing=========================");
     }
 
     @AfterReturning("showLog()")
@@ -46,7 +45,7 @@ public class AopAspect {
 
     @After("showLog()")
     public void After(){
-        System.out.println("3:After=========================");
+        System.out.println("2:After=========================");
     }
 
 
