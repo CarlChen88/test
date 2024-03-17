@@ -55,5 +55,7 @@ public class CollectionsDemo2 {
         //统计功能
         DoubleSummaryStatistics doubleSummaryStatistics = studentList.stream().collect(summarizingDouble(Student::getGrade));
         System.out.println("11=========="+doubleSummaryStatistics);
+        IntSummaryStatistics collect9 = studentList.stream().collect(summarizingInt(Student::getGrade));
+        System.out.println("12=========="+collect9);
     }
 }
