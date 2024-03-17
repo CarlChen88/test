@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class GuavaDemo {
     public static void main(String[] args) {
-        test7();
+        test();
     }
 
     public static void test(){

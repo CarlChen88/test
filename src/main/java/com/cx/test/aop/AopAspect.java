@@ -18,6 +18,18 @@ import java.lang.reflect.Method;
 @Aspect
 public class AopAspect {
 
+
+    /**
+     * 切点表达式实例2粒度为类
+     */
+    @Pointcut("with(com.cx.test.controller..*)")
+    public void showLog3(){}
+    /**
+     * 切点表达式实例1(粒度为方法)
+     */
+    @Pointcut("execution(* com.cx.test.controller.*(..))")
+    public void showLog2(){}
+
     @Pointcut("@annotation(com.cx.test.aop.LogShow)")
     public void showLog(){}
 

@@ -1,7 +1,10 @@
 package com.cx.test.guava;
 
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import com.google.common.collect.*;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -13,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class GuavaDemo1 {
     public static void main(String[] args) {
         //test1();
-        test2();
+        test3();
 
     }
 
@@ -41,6 +44,28 @@ public class GuavaDemo1 {
         multiset.add("k1");
         multiset.add("k1");
         System.out.println(multiset.count("k1"));
+    }
+
+    public static void test3() {
+        List<String> list = Lists.newArrayList("zhangsan","lisi","wangwu");
+        Predicate<String> predicate1 = (s)->{
+            if("chenxiang".equals(s)){
+                return true;
+            }
+            return false;
+        };
+        Predicate<String> predicate2 = (s)->{
+            if("lisi".equals(s)){
+                return true;
+            }
+            return false;
+        };
+        Predicate<String> predicate_and = Predicates.and(predicate1,predicate2);
+        Predicate<String> predicate_or = Predicates.or(predicate1,predicate2);
+        System.out.println(Iterables.filter(list, predicate2));
+        System.out.println(Iterables.filter(list, predicate_and));
+        System.out.println(Iterables.filter(list, predicate_or));
+
     }
 
 
